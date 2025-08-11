@@ -1,15 +1,13 @@
 workflows:
-  flutter-build:
-    name: Flutter Android Build
-    instance_type: mac_mini_m2
+  my-workflow:
+    name: My Node.js Web App Workflow
+    instance_type: linux_x2
+    max_build_duration: 60
     environment:
-      flutter: stable
+      node: latest
+      npm: latest
     scripts:
-      - name: Install dependencies
-        script: |
-          flutter pub get
-      - name: Build Android app
-        script: |
-          flutter build apk --release
+      - npm install
+      - npm run build
     artifacts:
-      - build/app/outputs/flutter-apk/*.apk
+      - build/**
