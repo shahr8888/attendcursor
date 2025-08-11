@@ -1,7 +1,6 @@
 workflows:
   my-workflow:
     name: My Node.js Web App Workflow
-    instance_type:
     max_build_duration: 60
     environment:
       node: latest
@@ -11,5 +10,6 @@ workflows:
       - npm run build
     artifacts:
       - build/**
+
 
 
